@@ -1,5 +1,7 @@
 extern crate paho_mqtt as paho;
 
+use log::{warn, info};
+
 use crate::config::MqttConfig;
 use crate::config::Topic;
 
@@ -30,9 +32,9 @@ pub fn subscribe( mqtt: &paho::Client, topics: &Vec<Topic>, verbose: bool ) {
     for topic in topics {
         let e = mqtt.subscribe(topic.mqtt_topic.as_str(), 1);
         if e.is_ok() {
-            println!( "Subscribed to {}", topic.mqtt_topic );
+            info!( "Topic subscribed: \"{}\"", topic.mqtt_topic );
         } else if verbose {
-            println!( "Cannot subscribe to {} (error: {e:?})", topic.mqtt_topic );
+            warn!( "Cannot subscribe to topic \"{}\" (error: {e:?})", topic.mqtt_topic );
         }
     }
 }
