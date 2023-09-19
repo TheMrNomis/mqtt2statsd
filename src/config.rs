@@ -21,8 +21,11 @@ pub struct Config {
 pub struct MqttConfig {
     pub hostname: String,
 
-    #[serde(default = "default_mqtt_port") ]
-    pub port: u32
+    #[serde(default = "default_mqtt_port")]
+    pub port: u32,
+
+    #[serde(default = "default_timeout")]
+    pub timeout: u32
 }
 
 //------------------------------------------------------------------------------
@@ -65,4 +68,10 @@ fn default_mqtt_port() -> u32 {
 
 fn default_statsd_port() -> u32 {
     8125
+}
+
+//------------------------------------------------------------------------------
+
+fn default_timeout() -> u32 {
+    60
 }

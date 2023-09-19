@@ -2,6 +2,7 @@
 [mqtt]
 hostname = "localhost"
 #port = 1883             # optional, default: 1883
+#timeout = 60            # in seconds, optional, default: 60
 
 # Which Statsd server to send data to
 [statsd]
