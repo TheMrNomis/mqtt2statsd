@@ -30,11 +30,11 @@ pub fn create( config: &MqttConfig ) -> Result<paho::Client, paho::Error> {
 pub fn subscribe( mqtt: &paho::Client, topics: &Vec<Topic>, verbose: bool ) {
 
     for topic in topics {
-        let e = mqtt.subscribe(topic.mqtt_topic.as_str(), 1);
+        let e = mqtt.subscribe(topic.mqtt.as_str(), 1);
         if e.is_ok() {
-            info!( "Topic subscribed: \"{}\"", topic.mqtt_topic );
+            info!( "Topic subscribed: \"{}\"", topic.mqtt );
         } else if verbose {
-            warn!( "Cannot subscribe to topic \"{}\" (error: {e:?})", topic.mqtt_topic );
+            warn!( "Cannot subscribe to topic \"{}\" (error: {e:?})", topic.mqtt );
         }
     }
 }

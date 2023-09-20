@@ -7,18 +7,18 @@ hostname = "localhost"
 # Which Statsd server to send data to
 [statsd]
 hostname = "localhost"
-port = 8125             # optional, default: 8125
-prefix = "mqtt.stats"   # optional, default: "mqtt.stats"
+#port = 8125             # optional, default: 8125
+#prefix = "mqtt.stats"   # optional, default: "mqtt.stats"
 
 # List of topics to subscribe to, and corresponding stat
 [[topics]]
-mqtt_topic = "$SYS/broker/messages/publish/sent"
-statsd_topic = "publish_message_sent"
+mqtt = "$SYS/broker/messages/publish/sent"
+statsd = "publish_message_sent"
 
 [[topics]]
-mqtt_topic = "$SYS/broker/clients/connected"
-statsd_topic = "connected_clients"
+mqtt = "$SYS/broker/clients/connected"
+statsd = "connected_clients"
 
 [[topics]]
-mqtt_topic = "hello/world"
-statsd_topic = "hello_world"
+mqtt = "hello/world"
+statsd = "hello_world"

@@ -46,8 +46,8 @@ pub struct StatsdConfig {
 
 #[derive(Debug, Deserialize)]
 pub struct Topic {
-    pub mqtt_topic: String,
-    pub statsd_topic: String
+    pub mqtt: String,
+    pub statsd: String
 }
 
 // =============================================================================
