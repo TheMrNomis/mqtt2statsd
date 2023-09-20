@@ -2,6 +2,11 @@
 
 mqtt2statsd is a service that translates numeric MQTT messages into statsd gauge metrics.
 
+Licensed under the [MIT License](LICENSE.txt).
+
+The main repository for the code is [git.homnomnom.fr/nomis/mqtt2statsd](https://git.homnomnom.fr/nomis/mqtt2statsd), but a duplicate is available on [github/TheMrNomis/mqtt2statsd](https://github.com/TheMrNomis/mqtt2statsd).
+Both repositories are kept in sync, and contributions are welcome on both.
+
 ## Installing and running
 
 Currently, only supported on debian-based distributions.
