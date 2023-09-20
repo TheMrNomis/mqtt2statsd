@@ -1,8 +1,11 @@
 [package]
 name = "mqtt2statsd"
+description = "MQTT to StatsD bridge"
 license = "MIT"
+readme = "README.md"
+homepage = "https://git.homnomnom.fr/nomis/mqtt2statsd"
+repository = "https://git.homnomnom.fr/nomis/mqtt2statsd"
 version = "0.1.0"
-description = "MQTT to Statsd bridge"
 edition = "2021"
 
 [dependencies]
