@@ -1,0 +1,20 @@
+# How to subscribe to the MQTT server
+[mqtt]
+hostname = "localhost"
+#port = 1883             # optional, default: 1883
+#timeout = 60            # in seconds, optional, default: 60
+
+# Which Statsd server to send data to
+[statsd]
+hostname = "localhost"
+#port = 8125             # optional, default: 8125
+#prefix = "mqtt.stats"   # optional, default: "mqtt.stats"
+
+# List of topics to subscribe to, and corresponding stat
+#[[topics]]
+#mqtt = "$SYS/broker/messages/publish/sent"
+#statsd = "publish_message_sent"
+#
+#[[topics]]
+#mqtt = "$SYS/broker/clients/connected"
+#statsd = "connected_clients"

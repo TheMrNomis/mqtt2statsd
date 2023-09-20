@@ -1,0 +1,8 @@
+[Unit]
+Description=MQTT to StatsD bridge
+
+[Service]
+ExecStart=/usr/bin/mqtt2statsd /etc/mqtt2statsd/config.toml
+
+[Install]
+WantedBy=multi-user.target

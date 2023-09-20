@@ -1,12 +1,31 @@
 [package]
 name = "mqtt2statsd"
 description = "MQTT to StatsD bridge"
+authors = [ "n0m1s <git@homnomnom.fr>" ]
 license = "MIT"
 readme = "README.md"
 homepage = "https://git.homnomnom.fr/nomis/mqtt2statsd"
 repository = "https://git.homnomnom.fr/nomis/mqtt2statsd"
 version = "0.1.0"
 edition = "2021"
+
+[package.metadata.deb]
+license-file = [ "LICENSE.txt", "2" ]
+depends = "$auto"
+section = "utility"
+revision = ""
+extended-description = """\
+A service that translates numeric MQTT messages into StatsD gauge metrics."""
+maintainer-scripts = "debian/systemd"
+systemd-units = { enable = false }
+assets = [
+    [ "target/release/mqtt2statsd", "/usr/bin/", "755" ],
+    [ "README.md", "usr/share/doc/mqtt2statsd/README", "644"],
+    [ "debian/config.toml", "etc/mqtt2statsd/config.toml", "644"]
+]
+conf-files = [
+    "etc/mqtt2statsd/config.toml"
+]
 
 [dependencies]
 clap = { version = "4.3", features = [ "derive", "cargo" ]}
