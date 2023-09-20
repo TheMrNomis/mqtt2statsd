@@ -24,7 +24,7 @@ pub struct MqttConfig {
     #[serde(default = "default_mqtt_port")]
     pub port: u32,
 
-    #[serde(default = "default_timeout")]
+    #[serde(default = "default_mqtt_timeout")]
     pub timeout: u32
 }
 
@@ -34,6 +34,9 @@ pub struct MqttConfig {
 #[derive(Debug, Deserialize)]
 pub struct StatsdConfig {
     pub hostname: String,
+
+    #[serde(default = "default_statsd_prefix")]
+    pub prefix: String,
 
     #[serde(default = "default_statsd_port")]
     pub port: u32
@@ -66,12 +69,18 @@ fn default_mqtt_port() -> u32 {
 
 //------------------------------------------------------------------------------
 
+fn default_mqtt_timeout() -> u32 {
+    60
+}
+
+//------------------------------------------------------------------------------
+
 fn default_statsd_port() -> u32 {
     8125
 }
 
 //------------------------------------------------------------------------------
 
-fn default_timeout() -> u32 {
-    60
+fn default_statsd_prefix() -> String {
+    String::from("mqtt.stats")
 }
