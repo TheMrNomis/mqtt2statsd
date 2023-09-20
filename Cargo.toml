@@ -1,5 +1,6 @@
 [package]
 name = "mqtt2statsd"
+license = "MIT"
 version = "0.1.0"
 description = "MQTT to Statsd bridge"
 edition = "2021"
